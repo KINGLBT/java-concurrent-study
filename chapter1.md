@@ -31,5 +31,5 @@
 
 ## 同步（Synchronous）和异步（Asynchronous）
 
-
+![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter1/1-1.png)
 
