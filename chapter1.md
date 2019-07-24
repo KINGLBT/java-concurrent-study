@@ -41,3 +41,5 @@
 
 都可以表示为两个或者多个任务，一起执行。侧重点不同，并发偏重于多个任务交替执行，而多个任务还可能是串行的。
 并行是真正意义上的同时执行。
+
+![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter1/1-2.png)
