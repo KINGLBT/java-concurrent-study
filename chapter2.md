@@ -23,7 +23,7 @@ public enum State {
 } 
 ```
 
-NEW：表示线程刚刚创建，还没有开始执行，只有执行了start()方法，才开始执行。
-RUNNABLE:当线程执行的时候，处于RUNNABLE状态，表示所需要的资源都准备好了。
-BLOCKED:如果线程在执行过程中，遇到了同步块（Synchronous），则会进入BLOCKED阻塞状态
-WAITING和TIMED_WAITING：都表示等待
++ NEW：表示线程刚刚创建，还没有开始执行，只有执行了start()方法，才开始执行。
++ RUNNABLE:当线程执行的时候，处于RUNNABLE状态，表示所需要的资源都准备好了。
++ BLOCKED:如果线程在执行过程中，遇到了同步块（Synchronous），则会进入BLOCKED阻塞状态，这时线程就会暂停执行，直到获得请求锁。
++ WAITING和TIMED_WAITING：都表示等待，区别是WAITING无限等待，TIMED_WAITING是有时间等待。
