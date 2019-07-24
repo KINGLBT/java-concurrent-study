@@ -9,7 +9,7 @@
 线程就是轻量级进程，是程序执行的最小单位。使用多线程去进行并发设计，是因为线程间的切换和调度成本远远小于进程。
 
 线程的生命周期，如下图：
-![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter1/1-1.png)
+![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter2/2-1.png)
 
 
 ```java
@@ -22,3 +22,8 @@ public enum State {
     TERMINATED;
 } 
 ```
+
+NEW：表示线程刚刚创建，还没有开始执行，只有执行了start()方法，才开始执行。
+RUNNABLE:当线程执行的时候，处于RUNNABLE状态，表示所需要的资源都准备好了。
+BLOCKED:如果线程在执行过程中，遇到了同步块（Synchronous），则会进入BLOCKED阻塞状态
+WAITING和TIMED_WAITING：都表示等待
