@@ -31,5 +31,13 @@
 
 ## 同步（Synchronous）和异步（Asynchronous）
 
+同步方法调用一旦开始，调用者必须等待，知道返回结果，才能继续后续的行为。
+异步方法调用一旦开始，会立即放回结果，调用者可以继续后续的才做。而异步方法通常会
+在另一个线城中执行。
+
 ![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter1/1-1.png)
 
+## 并发（Concurrency）和并行（Parallelism）
+
+都可以表示为两个或者多个任务，一起执行。侧重点不同，并发偏重于多个任务交替执行，而多个任务还可能是串行的。
+并行是真正意义上的同时执行。
