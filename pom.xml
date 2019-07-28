@@ -7,6 +7,10 @@
     <artifactId>java-concurrent-study</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>java-concurrent-chapter01</module>
+        <module>java-concurrent-chapter02</module>
+    </modules>
     <name>java-concurrent-study</name>
     <description>Demo project for Spring Boot</description>
 </project>
