@@ -214,6 +214,10 @@ public class ThreadSleepInterrupt {
 + Thread.sleep()或Object.wait()会捕获中断异常后，需要再次执行interrupt中断自己，因为Thread.sleep()
 和Object.wait()方法会清除中断标志位
 
++ Thread.sleep()不会释放任何资源
+
+
+
 
 
 

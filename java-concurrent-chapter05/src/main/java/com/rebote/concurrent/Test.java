@@ -10,7 +10,6 @@ public class Test {
                 }
             }
         });
-
         t1.start();
         t1.interrupt();
     }
