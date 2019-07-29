@@ -61,11 +61,11 @@ public class MultiThreadChangeLong implements Runnable {
     }
 }
 ``` 
-+1、在64位JVM中，使用多线程对long型变量赋值，并读取查看是否正确
++ 1、在64位JVM中，使用多线程对long型变量赋值，并读取查看是否正确
 
 ![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter1/1-4.png)
 
-+2、在32位JVM中，使用多线程对long型变量赋值，并读取查看是否正确
++ 2、在32位JVM中，使用多线程对long型变量赋值，并读取查看是否正确
 
 ![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter1/1-3.png)
 
