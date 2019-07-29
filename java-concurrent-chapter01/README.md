@@ -17,10 +17,58 @@ JMM的关键技术点都是围绕着多线程的原子性，可见性和有序�
 所以对long的读写都要两条指令才能完成（即每次读写64bit中的32bit）。
 
 ### long 原子性检测
-1、在64位JVM中，使用多线程对long型变量赋值，并读取查看是否正确
+```java
+public class MultiThreadChangeLong implements Runnable {
 
+    public static long value = 0l;
 
-2、在32位JVM中，使用多线程对long型变量赋值，并读取查看是否正确
+    private long to;
+
+    public MultiThreadChangeLong(long to) {
+        this.to = to;
+    }
+
+    public void run() {
+        while (true) {
+            MultiThreadChangeLong.value = to;
+            Thread.yield();
+        }
+    }
+
+    public long getTo() {
+        return to;
+    }
+
+    public void setTo(long to) {
+        this.to = to;
+    }
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MultiThreadChangeLong(111l));
+        Thread t2 = new Thread(new MultiThreadChangeLong(-999l));
+        Thread t3 = new Thread(new MultiThreadChangeLong(333l));
+        Thread t4 = new Thread(new MultiThreadChangeLong(-444l));
+        t1.start();t2.start();t3.start();t4.start();
+        // 虚拟机位数
+        String arch = System.getProperty("sun.arch.data.model");
+        System.out.println(arch+"-bit");
+        while (true) {
+            if (MultiThreadChangeLong.value != 111l && MultiThreadChangeLong.value != -999l
+            && MultiThreadChangeLong.value != 333l && MultiThreadChangeLong.value != -444l) {
+                System.out.println(MultiThreadChangeLong.value);
+            }
+        }
+    }
+}
+``` 
++1、在64位JVM中，使用多线程对long型变量赋值，并读取查看是否正确
+
+![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter1/1-4.png)
+
++2、在32位JVM中，使用多线程对long型变量赋值，并读取查看是否正确
+
+![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter1/1-3.png)
+
 
 
 
