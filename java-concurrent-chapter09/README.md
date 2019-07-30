@@ -52,3 +52,7 @@ public class MultiThreadChangeLong implements Runnable {
     }
 }
 ```
+
+
+使用volidate关键字可以保证原子性，可见性等，但是并不能真正保证线程安全。它只能确保一个线程修改后，其他线程能够看到这个改动。但当两个线程同时修改某
+一个数据时候，依然会产生冲突。
