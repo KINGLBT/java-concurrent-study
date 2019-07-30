@@ -14,6 +14,7 @@
         <module>java-concurrent-chapter04</module>
         <module>java-concurrent-chapter05</module>
         <module>java-concurrent-chapter06</module>
+        <module>java-concurrent-chapter07</module>
     </modules>
     <name>java-concurrent-study</name>
     <description>Demo project for Spring Boot</description>
