@@ -47,7 +47,7 @@ public class ThreadJoin {
 
 ## join的底层
 
-![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter8/8-1.png)
+![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter8/8-2.png)
 
 
 如图所示，t1.join()，如果不设置等待时间，那么执行的代码是：
