@@ -3,6 +3,7 @@
 线程挂起和继续执行，是一对相反的操作。被挂起的线程，必须等到resume()方法操作后，才能继续执行。
 
 如下图所示，这两个方法已经被标记为废弃方法。不推荐使用。
+
 ![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter7/7-1.png)
 
 ## 不推荐使用suspend（）方法
@@ -75,6 +76,7 @@ public class BadSuspend {
 
 
 从上图可以看出来，线程t2在等待锁，线程t1的状态为RUNNABLE状态，并没有执行完成。并从17行代码出，看出线程是挂起的
+
 ![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter7/7-6.png)
 
 
@@ -118,6 +120,7 @@ public class GoodSuspend {
 ```
 
 运行结果：
+
 ![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter7/7-7.png)
 
 可以看出线程执行完成，程序自动退出
