@@ -39,13 +39,16 @@ public class ThreadJoin {
 ```
 
 查看运行结果：
+
 ![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter8/8-1.png)
+
 
 如果不加t1.join()的话，值可能是0，或者其他
 
 ## join的底层
 
 ![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter8/8-1.png)
+
 
 如图所示，t1.join()，如果不设置等待时间，那么执行的代码是：
 
@@ -60,6 +63,7 @@ isAlive()会检测t1线程的状态，如果是活动状态，则当前线程会
 被等待的线程会在退出前执行notifyAll()方法通知所有的等待线程，继续执行。
 
 大致流程如下：
+
 ![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter8/8-3.png)
 
 因此，需要注意的是，不要在Thread对象上使用类似wait()方法或者notify()方法，因为这很可能会影响系统API的工作，或者被系统API影响。
@@ -129,6 +133,7 @@ public class ThreadUseWait {
 }
 ```
 运行结果如下:
+
 ![Image text](https://raw.githubusercontent.com/KINGLBT/java-concurrent-study/master/image/chapter8/8-4.png)
 
 从运行结果可以看出来，t3还没有执行notify通知，t2就已经被唤醒了。得出：
